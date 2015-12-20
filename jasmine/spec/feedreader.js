@@ -21,7 +21,7 @@ $(function() {
 		 * allFeeds in app.js to be an empty array and refresh the
 		 * page?
 		 */
-		it('are defined', function() {
+		it('allFeeds var should be defined', function() {
 			expect(allFeeds).toBeDefined();
 			expect(allFeeds.length).not.toBe(0);
 		});
@@ -34,7 +34,7 @@ $(function() {
 			 allFeeds.forEach(function(feed) {
 				expect(feed.url).toBeDefined();
 				expect(feed.url).not.toEqual('');
-			})
+			});
 		 });
 
 		/* TODO: Write a test that loops through each feed
@@ -45,7 +45,7 @@ $(function() {
 			 allFeeds.forEach(function(feed) {
 				expect(feed.name).toBeDefined();
 				expect(feed.name).not.toEqual('');
-			})
+			});
 		 });
 	});
 
@@ -98,11 +98,13 @@ $(function() {
 		 * the use of Jasmine's beforeEach and asynchronous done() function.
 		 */
 		beforeEach(function(done) {
+			/*Loads and sets the 'done' function as callback*/
 			loadFeed(0, done);
 		});
 
 		it('should load at least a single .entry element within the .feed container', function(done) {
-			var feed = document.querySelectorAll('.feed a').length;;
+			/*Gets the length of '.feed' content*/
+			var feed = document.querySelectorAll('.feed a').length;
 			expect(feed).toBeGreaterThan(0);
 			done();
 		});
@@ -119,6 +121,8 @@ $(function() {
 				id;				
 		id = 0;
 		beforeEach(function(done) {
+			/*Loads the feed twice to save the title html in the first load
+			and compare it with the second load*/
 			loadFeed(id, function(){
 				currentContent = document.getElementsByClassName('header-title')[0].innerHTML;
 				loadFeed(id + 1, function(){
@@ -130,8 +134,6 @@ $(function() {
 
 		it('should change the content when load', function() {
 			expect(currentContent).not.toEqual(newContent);			
-		})
+		});
 	});
-
-		
 }());

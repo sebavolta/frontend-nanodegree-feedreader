@@ -1,3 +1,11 @@
+#How to run this project
+
+This project loads external feeds and it may need a local server to run it (such as XAMPP). 
+If you need to install a local server, please go to the XAMPP's oficial site https://www.apachefriends.org/es/index.html
+and download/install the software. 
+For more instructions please follow this tutorial https://blog.udemy.com/xampp-tutorial/
+Then go to your local host and open the index.html following the path of the project's folder.
+
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
